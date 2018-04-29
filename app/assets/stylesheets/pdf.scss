@@ -1,0 +1,15 @@
+tr.pdf{
+	border-bottom: solid;
+	border-width:1px;
+	border-color:black;
+}
+td,th.pdf{
+	text-align:left;
+}
+th.pdf{
+	background-color:#000;
+	color:white;
+}
+table,tr,td,th,tbody,thead,tfoot.pdf{
+	page-break-inside: avoid !important;
+}

@@ -1,0 +1,51 @@
+<%= form_for(word , :html => {:class => "form-horizontal"} )do |f| %>
+  <% if word.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(word.errors.count, "error") %> prohibited this word from being saved:</h2>
+
+      <ul>
+      <% word.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :language_id %>
+    <%= f.collection_select :language_id, Language.order(:name),:id,:name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :category_id %>
+    <%= f.collection_select :category_id, Category.order(:id),:id,:category %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vna_id %>
+    <%= f.collection_select :vna_id, Vna.order(:id),:id,:name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :word %>
+    <%= f.text_field :word %>
+  </div>
+
+  <div class="field">
+    <%= f.label :translation %>
+    <%= f.text_field :translation %>
+  </div>
+
+  <div class="field">
+    <%= f.cktext_area :definition %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :audio %>
+    <%=f.file_field :audio %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

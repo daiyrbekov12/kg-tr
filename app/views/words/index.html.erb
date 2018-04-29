@@ -1,0 +1,67 @@
+<!-- SEARCH FORM   -->
+<div class="search-form col-md-6 col-md-offset-3" style=" padding: 10px;">
+
+  <%= form_tag words_path, :method => :get do %>
+    <div class="input-group" >
+
+      <%= text_field_tag :search, params[:search], id: :text, class: "form" %>
+
+      <%= select_tag(:language_id, options_from_collection_for_select(Language.all, :id, :name)) %>
+
+      <%= submit_tag "Search", :name => nil %>
+    </div>
+    <input class="kgbutton" type="button" value="ө" id="button1"/>
+    <input class="kgbutton" type="button" value="ү" id="button2"/>
+    <input class="kgbutton" type="button" value="ң" id="button3"/>
+  <% end %>
+</div>
+
+
+<!--  SEARCH-RESULT   -->
+<div class="container search-result">
+
+  <div class="col-md-8 col-md-offset-2">
+
+
+
+    <% if @words.first!=nil %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Audio</th>
+          <th>Category</th>
+          <th><%= @words.first.language.name %></th>
+          <th>Translation</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @words.each do |word| %>
+        <tr >
+
+          <td>
+            <% if word.audio_url!=nil %>
+            <%= audio_tag word.audio_url.to_s , class: "audio-play" %>
+            <button class="btn btn-primary audioButton" value="<%= word.audio_url.to_s %>">Play</button>
+            <% end %>
+          </td>
+          <td><%= word.category.category %></td>
+
+          <td scope="row"><%= word.word %><p style="color:blue"><%= word.vna.name %></p></td>
+          <td><%= word.translation %></td>
+          <td><%= word.definition.html_safe %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <h3 style="color:red">
+      Not found
+    </h3>
+    <% end %>
+  </div>
+
+
+
+</div>
+<%= will_paginate @words , renderer: BootstrapPagination::Rails %>

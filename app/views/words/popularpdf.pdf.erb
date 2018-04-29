@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<%= wicked_pdf_stylesheet_link_tag 'pdf' %>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <meta charset="utf-8">
+</head>
+<body>
+  <h3 style="text-align: center;" >Most searched words</h3>
+
+<table class="pdf">
+	<thead class="pdf">
+		<tr class="pdf">
+			<th style="width: 200px", class="pdf">Words</th>
+			<th style="width: 250px", class="pdf">Translations</th>
+      <th style="width: 350px", class="pdf">Example</th>
+		</tr>
+	</thead>
+  <% @sorted = Word.all.order(:range).reverse %>
+  <tbody class="pdf">
+  	  <% @sorted.each do |most| %>
+  	  	<tr class="pdf">
+  	  		<td class="pdf"><%= most.word %></td>
+          <td class="pdf"><%= most.translation %></td>
+  	  		<td class="pdf"><%= most.definition %></td>
+  	  	</tr>
+  	  <% end %>
+  </tbody>
+</table>
+</body>
+</html>

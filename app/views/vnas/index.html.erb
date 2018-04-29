@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vnas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vnas.each do |vna| %>
+      <tr>
+        <td><%= vna.name %></td>
+        <td><%= link_to 'Show', vna %></td>
+        <td><%= link_to 'Edit', edit_vna_path(vna) %></td>
+        <td><%= link_to 'Destroy', vna, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vna', new_vna_path %>

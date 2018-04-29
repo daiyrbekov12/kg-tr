@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Wordlists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wordlists.each do |wordlist| %>
+      <tr>
+        <td><%= wordlist.name %></td>
+        <td><%= wordlist.user %></td>
+        <td><%= link_to 'Show', wordlist %></td>
+        <td><%= link_to 'Edit', edit_wordlist_path(wordlist) %></td>
+        <td><%= link_to 'Destroy', wordlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wordlist', new_wordlist_path %>

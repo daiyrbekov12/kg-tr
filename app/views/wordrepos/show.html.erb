@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Wordlist:</strong>
+  <%= @wordrepo.wordlist.name %>
+</p>
+
+<p>
+  <strong>Word:</strong>
+  <%= @wordrepo.word.id %>
+</p>
+
+<%= link_to 'Edit', edit_wordrepo_path(@wordrepo) %> |
+<%= link_to 'Back', wordrepos_path %>

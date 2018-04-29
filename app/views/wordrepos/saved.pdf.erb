@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+    <%= wicked_pdf_stylesheet_link_tag 'pdf' %>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta charset="utf-8">
+</head>
+<body>
+
+</body>
+  <h3 style="text-align: center;" >My bookmarked words</h3>
+<table class="pdf">
+  <thead class="pdf">
+    <tr class="pdf">
+      <th style="width: 200px", class="pdf">Words</th>
+      <th style="width: 250px", class="pdf">Translations</th>
+      <th style="width: 350px", class="pdf">Example</th>
+    </tr>
+  </thead>
+  <tbody class="pdf">
+      <% @wordrepos.each do |wordrepo| %>
+        <tr class="pdf">
+          <td class="pdf"><%= wordrepo.word.word %></td>
+          <td class="pdf"><%= wordrepo.word.translation %></td>
+          <td class="pdf"><%= wordrepo.word.definition %></td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>
+</body>
+</html>
+
+

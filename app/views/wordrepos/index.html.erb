@@ -1,0 +1,37 @@
+<div class="container" style="text-align:left" >
+
+  <h3>My bookmarked words</h3>
+  <div class="row">
+    <div class="col-md-3">
+      <h3>Word</h3>
+    </div>
+    <div class="col-md-3">
+      <h3>Translation</h3>
+    </div>
+    <div class="col-md-3">
+      <h3>Example</h3>
+    </div>
+  </div>
+
+  <% @wordrepos.each do |wordrepo| %>
+    <div class="row" >
+
+      <div class="col-md-3" style="float:left;">
+        <%= wordrepo.word.word %>
+      </div>
+      <div class="col-md-3" style="float:left;">
+        <%= wordrepo.word.translation %>
+      </div>
+      
+      <div class="col-md-3">
+        <%= wordrepo.word.definition %>
+      </div>
+
+      <div class="col-md-3">
+          <%= link_to 'Destroy', wordrepo, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+  <% end %>
+
+</div>
+<%= link_to "Create PDF",wordrepos_path(current_user, format: 'pdf') %>
