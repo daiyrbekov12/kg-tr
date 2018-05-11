@@ -11,8 +11,8 @@ class WordsController < ApplicationController
     keyword = params[:search]
     keyword = '*' if keyword==nil || keyword==''
 
-    @words=Word.search keyword, fields: [:word] , page: params[:page], per_page: 10
-#
+    @words = Word.search keyword, fields: [:word] , page: params[:page], per_page: 10
+    
 #Session save every search
     if session[:word]==nil
       session[:word]=[]

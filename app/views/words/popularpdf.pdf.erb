@@ -23,7 +23,7 @@
   	  	<tr class="pdf">
   	  		<td class="pdf"><%= most.word %></td>
           <td class="pdf"><%= most.translation %></td>
-  	  		<td class="pdf"><%= most.definition %></td>
+  	  		<td class="pdf"><%= most.definition.html_safe %></td>
   	  	</tr>
   	  <% end %>
   </tbody>

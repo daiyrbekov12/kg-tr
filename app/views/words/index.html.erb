@@ -12,7 +12,14 @@
     </div>
     <input class="kgbutton" type="button" value="ө" id="button1"/>
     <input class="kgbutton" type="button" value="ү" id="button2"/>
-    <input class="kgbutton" type="button" value="ң" id="button3"/>
+    <input class="kgbutton" type="button" value="ң" id="button3"/><br>
+
+    <input class="kgbutton" type="button" value="ç" id="button4"/>
+    <input class="kgbutton" type="button" value="ğ" id="button5"/>
+    <input class="kgbutton" type="button" value="ı" id="button6"/>
+    <input class="kgbutton" type="button" value="ö" id="button7"/>
+    <input class="kgbutton" type="button" value="ş" id="button8"/>
+    <input class="kgbutton" type="button" value="ü" id="button9"/>
   <% end %>
 </div>
 
@@ -54,13 +61,26 @@
         <% end %>
       </tbody>
     </table>
-  <% else %>
+    <% elsif @sameWords.length != 0  %>
+    Same Words:<br>
+      <% @sameWords.each do |s| %>
+        <%= s %><br>
+      <% end %>
+    <% else %>
+
     <h3 style="color:red">
       Not found
     </h3>
     <% end %>
+    <div class="">
+      Last Search words:<br>
+      <% session[:word].each do |a| %>
+      <%= a %><br>
+      <% end %>
+    </div>
   </div>
 
+</div>
 
 
 </div>

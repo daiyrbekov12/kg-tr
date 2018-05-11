@@ -11,6 +11,9 @@
     <div class="col-md-3  ">
       <h3>Example</h3>
     </div>
+    <div class="col-md-3  ">
+      <h3>Search counter</h3>
+    </div>
   </div>
   <% @sorted = Word.all.order(:range).reverse %>
   <% @sorted.each do |most| %>
@@ -24,7 +27,10 @@
         <%= most.translation %>
       </div>
       <div class="col-md-3">
-        <%= most.definition %>
+        <%= most.definition.html_safe %>
+      </div>
+      <div class="col-md-3">
+        <%= most.range %>
       </div>
 
     </div>

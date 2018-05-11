@@ -45,7 +45,7 @@ $( document ).ready(function() {
       alert("Can not save");
       console.log("Erro");
     });
-    
+
 
 });
 
@@ -71,3 +71,69 @@ $(function () {
         text.val(text.val() + 'ң');
     });
 });
+
+
+$(function () {
+    $('#button4').on('click', function () {
+        var text = $('#text');
+        text.val(text.val() + 'ç');
+    });
+});
+
+$(function () {
+    $('#button5').on('click', function () {
+        var text = $('#text');
+        text.val(text.val() + 'ğ');
+    });
+});
+
+$(function () {
+    $('#button6').on('click', function () {
+        var text = $('#text');
+        text.val(text.val() + 'ı');
+    });
+});
+
+$(function () {
+    $('#button7').on('click', function () {
+        var text = $('#text');
+        text.val(text.val() + 'ö');
+    });
+});
+
+$(function () {
+    $('#button8').on('click', function () {
+        var text = $('#text');
+        text.val(text.val() + 'ş');
+    });
+});
+
+$(function () {
+    $('#button9').on('click', function () {
+        var text = $('#text');
+        text.val(text.val() + 'ü');
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

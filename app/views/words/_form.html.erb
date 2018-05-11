@@ -28,8 +28,19 @@
 
   <div class="field">
     <%= f.label :word %>
-    <%= f.text_field :word %>
+    <%= f.text_field :word, id: :text %>
   </div>
+
+  <input class="kgbutton" type="button" value="ө" id="button1"/>
+  <input class="kgbutton" type="button" value="ү" id="button2"/>
+  <input class="kgbutton" type="button" value="ң" id="button3"/> <br>
+
+  <input class="kgbutton" type="button" value="ç" id="button4"/>
+  <input class="kgbutton" type="button" value="ğ" id="button5"/>
+  <input class="kgbutton" type="button" value="ı" id="button6"/>
+  <input class="kgbutton" type="button" value="ö" id="button7"/>
+  <input class="kgbutton" type="button" value="ş" id="button8"/>
+  <input class="kgbutton" type="button" value="ü" id="button9"/>
 
   <div class="field">
     <%= f.label :translation %>
@@ -39,7 +50,7 @@
   <div class="field">
     <%= f.cktext_area :definition %>
   </div>
-  
+
   <div class="field">
     <%= f.label :audio %>
     <%=f.file_field :audio %>
