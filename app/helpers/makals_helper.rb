@@ -1,0 +1,2 @@
+module MakalsHelper
+end

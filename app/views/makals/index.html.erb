@@ -1,0 +1,31 @@
+<div class="container search-result">
+
+  <div class="col-md-8 col-md-offset-2">
+
+
+
+    <% if @makals.first!=nil %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Kg</th>
+          <th>Tr</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @makals.each do |word| %>
+        <tr >
+          <td><%= word.kg %></td>
+          <td><%= word.tr %></td>
+          <td><%= word.description %></td>
+
+
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+<% end %>
+  </div>
+
+</div>
